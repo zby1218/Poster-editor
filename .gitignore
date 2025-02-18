@@ -1,0 +1,27 @@
+# 依赖
+node_modules/
+dist/
+build/
+
+# 环境配置
+.env
+.env.local
+.env.*.local
+
+# 编辑器配置
+.vscode/
+.idea/
+.DS_Store
+
+# 日志文件
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
+
+# 测试覆盖率
+coverage/
+.cache/
+
+# 锁定文件（可选，根据团队需求决定是否上传）
+package-lock.json
