@@ -1,23 +1,22 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-import { ref } from 'vue';
-const selectedKeys = ref(["1"]);
-</script>
-
 <template>
-    <a-layout>
-      <a-layout-header>Header</a-layout-header>
-      <a-layout-content>Content</a-layout-content>
-      <a-layout-footer>Footer</a-layout-footer>
-    </a-layout>
+  <div v-if="!$route.meta.hideNav">
+    <a-button @click="goToPage('/user')">User</a-button>
+    <a-button @click="goToPage('/control')">Control</a-button>
+    <a-button @click="goToPage('/editor')">Editor</a-button>
+  </div>
+  <router-view></router-view>
+
 </template>
 
+<script setup lang="ts">
+  import {  useRouter } from 'vue-router'
+  import { ref } from 'vue';
+  const router = useRouter()
+  const goToPage = (path: string) => {
+    router.push(path)
+  }
+</script>
+
 <style scoped>
-.test{
-  width: 100px;
-  height: 40px;
-  border: 1px solid saddlebrown;
-}
 </style>
 
